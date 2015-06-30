@@ -1,0 +1,19 @@
+// Mandelbrot fractal
+// the very first demo written for Due VGA out.
+
+#include <VGA.h>
+#include "displayfont.h"
+//extern unsigned char white,red,green,blue,black;
+unsigned char white=255,red=224,green=28,blue=3,black=0,magenta=227,cyan=31,grey=146,brown=128,orange=240;
+void setup() {
+  VGA.begin(320,240,VGA_COLOUR);
+  Serial.begin(9600);
+  VGA.drawText("Hi",15,108,28,0,0);
+  Display8x16Character(40,16,"Hi",black,orange); 
+  Display16x24Character(70,160,"Hi",green,white);
+  vga_putstring("Hi Friends",200,66,2,0,black,orange);
+}
+
+void loop(){
+  VGA.waitSync();
+}
